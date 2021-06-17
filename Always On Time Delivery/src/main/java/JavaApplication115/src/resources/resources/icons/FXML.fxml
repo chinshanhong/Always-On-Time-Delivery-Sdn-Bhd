@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1240.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication1.FXMLController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="415.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/Package.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="926.0" layoutY="282.0" prefHeight="60.0" prefWidth="54.0" text="OR" textAlignment="RIGHT" textFill="#336699">
+         <font>
+            <Font name="Calibri Bold" size="36.0" />
+         </font>
+      </Label>
+      <VBox alignment="CENTER" layoutX="181.0" layoutY="596.0" prefHeight="116.0" prefWidth="858.0" spacing="10.0">
+         <children>
+            <ComboBox fx:id="comb" editable="true" layoutX="501.0" layoutY="590.0" onAction="#Select" prefHeight="36.0" prefWidth="240.0" promptText="Select an algorithm" />
+            <Label fx:id="ComboLabel" layoutX="751.0" layoutY="590.0" onMouseClicked="#Select" prefHeight="36.0" prefWidth="400.0" style="-fx-text-fill: #336699;" textFill="#336699">
+               <font>
+                  <Font name="Calibri Bold Italic" size="31.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <Label layoutX="596.0" layoutY="60.0" prefHeight="60.0" prefWidth="265.0" text="Route Searching" textFill="#336699">
+         <font>
+            <Font name="Rockwell Condensed" size="49.0" />
+         </font>
+      </Label>
+      <HBox layoutX="580.0" layoutY="712.0" prefHeight="88.0" prefWidth="80.0" spacing="50.0">
+         <children>
+            <Button fx:id="RunBtn" mnemonicParsing="false" onAction="#RunProgram" style="-fx-background-color: #336699; -fx-text-fill: #ffffff; -fx-background-radius: 50; -fx-max-height: 80px; -fx-max-width: 80px; -fx-min-height: 80px; -fx-min-width: 80px;" text="Run">
+               <font>
+                  <Font name="Calibri Bold Italic" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <Label fx:id="TipLabel" layoutX="88.0" layoutY="138.0" prefHeight="60.0" prefWidth="380.0" text="Please enter only numbers!" textFill="#336699">
+         <font>
+            <Font name="Calibri Bold Italic" size="32.0" />
+         </font>
+      </Label>
+      <VBox layoutX="47.0" layoutY="218.0" spacing="30.0">
+         <children>
+            <HBox layoutX="42.0" layoutY="188.0" prefHeight="48.0" prefWidth="810.0" spacing="18.0">
+               <children>
+                  <HBox spacing="10.0">
+                     <children>
+                        <Label alignment="CENTER_RIGHT" layoutX="42.0" layoutY="196.0" prefHeight="32.0" prefWidth="259.0" text="Number of customer:" textFill="#336699">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="NumOfCustomer" layoutX="301.0" layoutY="188.0" onAction="#Enter" prefHeight="36.0" prefWidth="93.0" style="-fx-text-fill: #336699;">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox spacing="10.0">
+                     <children>
+                        <Label alignment="CENTER_RIGHT" layoutX="415.0" layoutY="196.0" prefHeight="32.0" prefWidth="230.0" text="Maximum capacity:" textFill="#336699">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="MaxCapacity" onAction="#Enter" prefHeight="36.0" prefWidth="93.0" style="-fx-text-fill: #336699;">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="105.0" />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox layoutX="42.0" layoutY="253.0" prefHeight="48.0" prefWidth="810.0" spacing="20.0">
+               <children>
+                  <HBox spacing="10.0">
+                     <children>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="TOP" prefHeight="32.0" prefWidth="160.0" text="Depot (X):" textFill="#336699">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="DepotX" onAction="#Enter" prefHeight="36.0" prefWidth="93.0" style="-fx-text-fill: #336699;">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox spacing="10.0">
+                     <children>
+                        <Label alignment="CENTER_RIGHT" layoutX="42.0" layoutY="305.0" prefHeight="32.0" prefWidth="159.0" text="Depot (Y):" textFill="#336699">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="DepotY" layoutX="164.0" layoutY="297.0" onAction="#Enter" prefHeight="36.0" prefWidth="93.0" style="-fx-text-fill: #336699;">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox spacing="10.0">
+                     <children>
+                        <Label alignment="CENTER_RIGHT" layoutX="491.0" layoutY="305.0" prefHeight="32.0" prefWidth="161.0" text="Demand size:" textFill="#336699">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="DemandSizeOfDepot" layoutX="652.0" layoutY="297.0" onAction="#Enter" prefHeight="36.0" prefWidth="93.0" style="-fx-text-fill: #336699;" text="0">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox layoutX="42.0" layoutY="330.0" prefHeight="138.0" prefWidth="810.0" spacing="10.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="32.0" prefWidth="273.0" text="Information of customer:" textFill="#336699">
+                     <font>
+                        <Font name="Calibri Bold Italic" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="InformationOfCustomer" prefHeight="15.0" prefWidth="537.0" promptText="e.g.:                                                              22 33 3                                                         44 55 3" style="-fx-text-fill: #336699;">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </TextArea>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="41.0" prefWidth="231.0" spacing="10.0">
+               <children>
+                  <Button fx:id="EnterBtn" mnemonicParsing="false" onAction="#Enter" style="-fx-background-color: #336699;" text="Enter" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold Italic" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="ClearBtn" mnemonicParsing="false" onAction="#Clear" style="-fx-background-color: FF9797;" text="Clear" textFill="#fcf9f9">
+                     <font>
+                        <Font name="Calibri Bold Italic" size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="45.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+      <Button fx:id="OpenAFile" layoutX="1032.0" layoutY="290.0" mnemonicParsing="false" onAction="#OpenAFile" onMouseClicked="#OpenAFile" style="-fx-background-color: FF9797; -fx-background-radius: 50; -fx-min-height: ; -fx-max-width: 160; -fx-max-height: 40; -fx-min-width: 0;" text="Open a file" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold Italic" size="24.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
